@@ -1,0 +1,482 @@
+/* ===========================
+   Base Styling
+=========================== */
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  color: #1d1d1f;
+  background-color: #f5f5f7;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ===========================
+   Top Navigation
+=========================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(245,245,247,0.85);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1d1d1f;
+  opacity: 0.8;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+
+/* ===========================
+   HERO SECTION
+=========================== */
+.hero {
+  background-image: url("images/2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  color: #ffffff;
+  padding: 150px 20px 170px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.42); /* helps text stand out */
+  z-index: 0;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 8px;
+}
+
+.hero-title {
+  font-size: clamp(44px, 6vw, 70px);
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  max-width: 580px;
+  opacity: 0.9;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+
+/* ===========================
+   Buttons
+=========================== */
+.btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: 0.15s ease-in-out;
+}
+
+.btn-filled {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.btn-filled:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-outline:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+
+/* ===========================
+   Content Blocks
+=========================== */
+.block {
+  padding: 70px 20px;
+}
+
+.block-light {
+  background-color: #f5f5f7;
+}
+
+.block-dark {
+  background-color: #ffffff;
+}
+
+.block-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.block-centered {
+  text-align: center;
+}
+
+.block h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.block-lead {
+  font-size: 18px;
+  opacity: 0.8;
+  max-width: 640px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+
+/* ===========================
+   Resume Layout
+=========================== */
+.block-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.2fr);
+  gap: 40px;
+  align-items: start;
+}
+
+
+/* ===========================
+   Profile Card
+=========================== */
+.block-media {
+  display: flex;
+  justify-content: center;
+  align-self: start;
+}
+
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 30px 26px 28px;
+  box-shadow: 0 16px 45px rgba(0,0,0,0.13);
+  max-width: 320px;
+  text-align: center;
+}
+
+.profile-photo {
+  width: 155px;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 14px;
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.profile-tagline {
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+
+/* ===========================
+   Job Experience Cards
+=========================== */
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin: 20px 0 40px;
+}
+
+.job-card {
+  background-color: #ffffff;
+  border-radius: 22px;
+  padding: 24px 28px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.job-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.job-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.job-title a:hover {
+  text-decoration: underline;
+}
+
+.job-meta {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.job-summary {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* ===========================
+   Certification Card
+=========================== */
+.cert-card {
+  background-color: #ffffff;
+  border-radius: 26px;
+  padding: 30px 32px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+  max-width: 900px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+
+.cert-card h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.cert-meta {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.cert-summary {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* ===========================
+   Weather Card
+=========================== */
+.weather-card {
+  background-color: #ffffff;
+  border-radius: 22px;
+  padding: 20px 22px;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  min-width: 260px;
+}
+
+
+/* ===========================
+   Map
+=========================== */
+.map-wrapper {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.15);
+}
+
+
+/* ===========================
+   Footer
+=========================== */
+.footer {
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding: 20px 24px 30px;
+  background-color: #f5f5f7;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #86868b;
+}
+
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 800px) {
+
+  .block-split {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 120px 20px;
+  }
+
+  .profile-card {
+    margin-top: 20px;
+  }
+}
+/* ===========================
+   SJSU HERO CARD (BLUE/GOLD, 80% WIDTH)
+=========================== */
+
+.hero-sjsu-card {
+    position: relative;
+    width: min(1100px, 80vw);   /* ~80% of screen, centered */
+    height: 260px;
+    margin: 60px auto 32px;     /* center with space above/below */
+    border-radius: 22px;
+    overflow: hidden;
+  
+    background-image:
+      linear-gradient(120deg,
+        rgba(0, 48, 135, 0.82),  /* SJSU blue */
+        rgba(218, 165, 32, 0.45) /* SJSU gold */
+      ),
+      url("images/sjsuhero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+  }
+  
+  .hero-sjsu-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;     /* center the "San José State University" text */
+    padding: 40px 40px;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  
+  .hero-sjsu-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+  
+  .hero-sjsu-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.96;
+  }
+  
+  /* ===========================
+     SJSU INVOLVEMENT CARD (80% WIDTH)
+  =========================== */
+  
+  .sjsu-involvement-card {
+    width: min(1100px, 80vw);    /* same width as hero card */
+    margin: 0 auto 40px;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 28px 28px 24px;
+    box-shadow: 0 16px 35px rgba(0,0,0,0.10);
+    text-align: center;
+  }
+  
+  .sjsu-involvement-card h2 {
+    margin-top: 0;
+  }
+  
+  .fun-note {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+  }
+  
+  /* list inside the card */
+  .college-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+    text-align:  middle;    /* keeps bullets/content easy to read */
+  }
+  
+  .college-list li {
+    background: #f8f8fb;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    font-size: 1.02rem;
+  }
+  .hero-temp {
+    position: absolute;
+    top: 0px;
+    left: 280px;
+  
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    opacity: 0.85;
+  
+    z-index: 3;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  }
+  
